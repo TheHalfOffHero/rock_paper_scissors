@@ -46,3 +46,9 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
+//Game function will play a 5 round game of rock paper scissors to determine a winner
+//function should keep score for all 5 rounds and report a winner
+function game() {
+    
+}
