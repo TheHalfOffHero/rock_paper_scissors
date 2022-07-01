@@ -14,3 +14,35 @@ function computerPlay(){
         return 'Scissors'
     }
 }
+
+//Playround function takes player selection and computer selection and returns the winner. result returned in String.
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+        return `Its a Tie, both players chose ${playerSelection}`
+    } else {
+        //if groupings based on computer selection, only 2 options for player
+        if (computerSelection.toLowerCase() == 'rock'){
+            if (playerSelection.toLowerCase() == 'paper') {
+                return `You win, ${playerSelection} beats ${computerSelection}`
+            } else {
+                return `You lose, ${computerSelection} beats ${playerSelection}`
+            }
+        }
+        //if computer selects paper, player selects rock or scissors
+        else if (computerSelection.toLowerCase() == 'paper') {
+            if (playerSelection.toLowerCase() == 'scissors'){
+                return `You win, ${playerSelection} beats ${computerSelection}`
+            } else {
+                return `You lose, ${computerSelection} beats ${playerSelection}`
+            }
+        }
+        //computer has selected scissors, so we account for player picking rock or paper
+        else if (computerSelection.toLowerCase() == 'scissors') {
+            if (playerSelection.toLowerCase() == 'paper'){
+                return `You lose, ${computerSelection} beats ${playerSelection}`
+            } else {
+                return `You win, ${playerSelection} beats ${computerSelection}`
+            }
+        }
+    }
+}
