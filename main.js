@@ -50,5 +50,24 @@ function playRound(playerSelection, computerSelection) {
 //Game function will play a 5 round game of rock paper scissors to determine a winner
 //function should keep score for all 5 rounds and report a winner
 function game() {
+    let playerWins = 0
     
+    for (let index = 0; index < 5; index++) {
+        let playerInput = prompt("Enter rock, paper, or scissors")
+        let gameResult = playRound(playerInput, computerPlay())
+        const gameResultArray = gameResult.split()
+        console.log(gameResult)
+
+        if (gameResultArray[1] == "win") {
+            playerWins += 1
+        }
+    }
+
+    
+    if (playerWins >= 3) {
+        console.log(`The Player wins with a total of : ${playerWins}`)
+    }
+    else {
+        console.log(`You lose computer wins with: ${5 - playerWins}`)
+    }
 }
